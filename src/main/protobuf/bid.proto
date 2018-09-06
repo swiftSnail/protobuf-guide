@@ -1,0 +1,54 @@
+syntax = "proto3";
+
+import "google/protobuf/any.proto";
+
+option java_package = "com.swiftsnail.proto.generated";
+option java_multiple_files = true;
+option java_outer_classname = "RTB";
+// SPEED, CODE_SIZE, or LITE_RUNTIME
+option optimize_for = SPEED;
+
+message BidRequest {
+    reserved 100, 101;
+    reserved "reserved_filed_1", "reserved_filed_2";
+    string id = 1;
+
+    // https://developers.google.com/protocol-buffers/docs/proto3#scalar
+    double double_v = 2;
+    float float_v = 3;
+    repeated  int32 int32_v = 4;
+    int64 int64_v = 5;
+    uint32 uint32_v = 6;
+    uint64 uint64_v = 7;
+    sint32 sint32_v = 8;
+    sint64 sint64_v = 9;
+    fixed32 fixed32_v = 10;
+    fixed64 fixed64_v = 11;
+    sfixed32 sfixed32_v = 12;
+    sfixed64 sfixed64_v = 13;
+    bool bool_v = 14;
+    bytes bytes_v = 15;
+
+}
+
+message BidResponse {
+    string id = 1;
+    int32 bid_cost = 2;
+
+    google.protobuf.Any any_data = 3;
+
+}
+
+enum Quintessence {
+    option allow_alias = true;
+
+    CALLIGRAPHY = 0;
+    PEKING_OPERA = 1;
+    WUSHU = 2;
+    TRADITIONAL_CHINESE_MEDICINE = 3;
+    TCM = 3;
+}
+
+message PrivateBid {
+    int32 cost = 1;
+}

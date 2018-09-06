@@ -1,0 +1,6 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+protobuf-guide.iml
+target
+src/main/java/com/google/protobuf/*
+src/main/java/com/swiftsnail/proto/generated/*
